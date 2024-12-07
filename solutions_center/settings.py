@@ -138,3 +138,4 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     'https://solutionscenter-backend-production.up.railway.app',
 ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
