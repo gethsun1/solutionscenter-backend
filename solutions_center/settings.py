@@ -51,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'solutions_center.urls'
@@ -133,9 +132,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.User'
 
+# CORS and CSRF settings
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
-    "http://localhost:8000",
+    'http://localhost:8000',
     'https://solutionscenter-backend-production.up.railway.app',
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://solutionscenter-backend-production.up.railway.app',
+]
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
