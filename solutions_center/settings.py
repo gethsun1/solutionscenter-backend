@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f=@bq%a1nor&xbgh#-aa4kmezg@zfn=5-(p^b1pu#$8n$d=q*t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'solutions_center.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',  # Use SQLite for local development
+        'NAME': BASE_DIR / 'db.sqlite3',         # Local database file
     }
 }
 
@@ -121,6 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Directory for static files
+
+MEDIA_URL = '/media/'  # Media URL for file uploads
+MEDIA_ROOT = BASE_DIR / 'media'  # Local path for uploaded files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -131,7 +135,5 @@ AUTH_USER_MODEL = 'core.User'
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
-    "http://localhost:3000",
+    "http://localhost:8000",
 ]
-
-
