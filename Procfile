@@ -1,1 +1,1 @@
-web: gunicorn solutions_center.wsgi:application
+web: gunicorn app:app
