@@ -20,12 +20,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True').lower() in ['true', '1']
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'solutionscenter-backend-production.up.railway.app',
-]
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -127,6 +122,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://solutionscenterke.com',
     'https://solutionscenter-backend-production.up.railway.app',
 ]
+
 CORS_ALLOW_CREDENTIALS = True  # Allow cookies and credentials for authentication
 
 # Debugging and Security (adjust for production)
