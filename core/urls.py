@@ -1,12 +1,15 @@
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter  # Add this import
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .views.solution_views import SolutionViewSet
 from .views.auth_views import RegisterView, LoginView
 from .views.password_reset_views import PasswordResetView, PasswordResetConfirmView
 
+# Registering viewsets with router
 router = DefaultRouter()
 router.register(r'solutions', SolutionViewSet)
 
+# Define the URL patterns
 urlpatterns = [
     # Solution endpoints
     path('', include(router.urls)),
