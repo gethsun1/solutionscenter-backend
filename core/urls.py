@@ -1,8 +1,9 @@
+# core/urls.py
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views.solution_views import SolutionViewSet  # Fix the import path here
-from .views.auth_views import RegisterView, LoginView  # Corrected imports for other views
-from .views.password_reset_views import PasswordResetView, PasswordResetConfirmView  # Corrected imports
+from .views.solution_views import SolutionViewSet
+from .views.auth_views import RegisterView, LoginView
+from .views.password_reset_views import PasswordResetView, PasswordResetConfirmView
 
 router = DefaultRouter()
 router.register(r'solutions', SolutionViewSet)
