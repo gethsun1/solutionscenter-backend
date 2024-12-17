@@ -73,6 +73,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=150, required=True)
     password = serializers.CharField(write_only=True, required=True)
+    user = UserSerializer(read_only=True)  # Adding this to return user details
 
     def validate(self, data):
         username = data.get('username')
