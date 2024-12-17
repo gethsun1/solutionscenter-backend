@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /data/data/com.termux/files/home/GKM/solutions-center/venv
+set -gx VIRTUAL_ENV /home/gkm/Documents/GKM/Solutions/solutionscenter-backend/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

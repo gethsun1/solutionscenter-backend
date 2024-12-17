@@ -14,9 +14,8 @@ deactivate () {
         unset _OLD_VIRTUAL_PYTHONHOME
     fi
 
-    # Call hash to forget past locations. Without forgetting
-    # past locations the $PATH changes we made may not be respected.
-    # See "man bash" for more details. hash is usually a builtin of your shell
+    # Call hash to forget past commands. Without forgetting
+    # past commands the $PATH changes we made may not be respected
     hash -r 2> /dev/null
 
     if [ -n "${_OLD_VIRTUAL_PS1:-}" ] ; then
@@ -40,10 +39,10 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath /data/data/com.termux/files/home/GKM/solutions-center/venv)
+    export VIRTUAL_ENV=$(cygpath /home/gkm/Documents/GKM/Solutions/solutionscenter-backend/venv)
 else
     # use the path as-is
-    export VIRTUAL_ENV=/data/data/com.termux/files/home/GKM/solutions-center/venv
+    export VIRTUAL_ENV=/home/gkm/Documents/GKM/Solutions/solutionscenter-backend/venv
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"

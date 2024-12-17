@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/home/GKM/solutions-center/venv/bin/python
+#!/home/gkm/Documents/GKM/Solutions/solutionscenter-backend/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

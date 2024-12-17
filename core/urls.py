@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .views.solution_views import SolutionViewSet
-from .views.auth_views import RegisterView, LoginView
+from .views.auth_views import RegisterView, LoginView,UserProfileView
 from .views.password_reset_views import PasswordResetView, PasswordResetConfirmView
 
 # Registering viewsets with router
@@ -17,6 +17,7 @@ urlpatterns = [
     # Auth endpoints
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
+    path('user/', UserProfileView.as_view(), name='user-profile'),
 
     # Token JWT Endpoints
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
