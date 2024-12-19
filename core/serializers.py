@@ -19,13 +19,13 @@ class UserSerializer(serializers.ModelSerializer):
 
 # Solution Serializer
 class SolutionSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = Solution
         fields = [
             'id',
-            'user',
+            'user',  # Automatically assigned
             'solution_type',
             'description',
             'terms',
