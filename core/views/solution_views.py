@@ -6,7 +6,7 @@ from ..serializers import SolutionSerializer
 class SolutionViewSet(viewsets.ModelViewSet):
     queryset = Solution.objects.all()
     serializer_class = SolutionSerializer
-    permission_classes = [AllowAny]  # Ensure only authenticated users can access
+    permission_classes = [AllowAny]  
 
     def perform_create(self, serializer):
         # Automatically assign the authenticated user to the solution
